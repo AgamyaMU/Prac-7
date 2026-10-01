@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Technology Lab</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+
+        .accordion-button {
+            background-color: #4a148c;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #00838f;
+            color: white;
+        }
+
+        .accordion-button:hover {
+            background-color: #d81b60;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .accordion-item {
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: none;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.35);
+        }
+
+        .card-title {
+            color: #8e24aa;
+        }
+
+        .student-name {
+            font-weight: bold;
+            color: #37474f;
+        }
+
+        .custom-table thead {
+            background-color: #6a1b9a;
+            color: white;
+        }
+
+        .custom-table tbody tr {
+            transition: 0.3s;
+        }
+
+        .custom-table tbody tr:hover {
+            background-color: #e1bee7;
+            transform: scale(1.01);
+        }
+
+        .button-section {
+            padding: 20px;
+            background-color: #f3e5f5;
+        }
+
+        .button-section .btn {
+            transition: 0.3s;
+        }
+
+        .button-section .btn:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #00e5ff;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+            animation: headingMove 1s ease;
+        }
+
+        p.text-muted {
+            color: #e0f7fa !important;
+        }
+
+        .card-body {
+            background-color: #fce4ec;
+        }
+
+        .alert {
+            transition: 0.3s;
+        }
+
+        .alert:hover {
+            transform: translateX(5px);
+        }
+
+        @keyframes headingMove {
+
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container my-5">
+
+        <h2 class="text-center mb-4">
+            Web Technology Lab
+        </h2>
+
+        <p class="text-center text-muted mb-4">
+            Bootstrap Components Demonstration
+        </p>
+
+        <div class="accordion" id="webAccordion">
+
+            <!-- CARD -->
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header" id="headingCard">
+
+                    <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#cardSection"
+                        aria-expanded="true"
+                        aria-controls="cardSection">
+
+                        Card Component
+
+                    </button>
+
+                </h2>
+
+                <div id="cardSection"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingCard"
+                    data-bs-parent="#webAccordion">
+
+                    <div class="accordion-body">
+
+                        <div class="card" style="width: 18rem;">
+
+                            <img src="https://images.stockcake.com/public/b/7/5/b752a9a9-02bf-46e2-a238-38558c8e09f2_large/cosmic-human-connection-stockcake.jpg"
+                                class="card-img-top"
+                                alt="Nature Image">
+
+                            <div class="card-body">
+
+                                <h5 class="card-title">
+                                    Space Explorer
+                                </h5>
+
+                                <p class="card-text">
+                                    Bootstrap cards provide a simple and
+                                    attractive way to display images,
+                                    information and interactive elements
+                                    together.
+                                </p>
+
+                                <a href="#" class="btn btn-success">
+                                    Explore More
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALERTS -->
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header" id="headingAlert">
+
+                    <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#alertSection"
+                        aria-expanded="false"
+                        aria-controls="alertSection">
+
+                        Alert Messages
+
+                    </button>
+
+                </h2>
+
+                <div id="alertSection"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingAlert"
+                    data-bs-parent="#webAccordion">
+
+                    <div class="accordion-body">
+
+                        <div class="alert alert-primary" role="alert">
+                            Welcome to the Web Technology Lab!
+                        </div>
+
+                        <div class="alert alert-success" role="alert">
+                            Operation completed successfully.
+                        </div>
+
+                        <div class="alert alert-warning" role="alert">
+                            Please check the information carefully.
+                        </div>
+
+                        <div class="alert alert-danger" role="alert">
+                            An error has occurred.
+                        </div>
+
+                        <div class="alert alert-info" role="alert">
+                            This section demonstrates Bootstrap alerts.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header" id="headingButtons">
+
+                    <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#buttonSection"
+                        aria-expanded="false"
+                        aria-controls="buttonSection">
+
+                        Button Styles
+
+                    </button>
+
+                </h2>
+
+                <div id="buttonSection"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingButtons"
+                    data-bs-parent="#webAccordion">
+
+                    <div class="accordion-body button-section">
+
+                        <button type="button"
+                            class="btn btn-primary m-1">
+                            Primary
+                        </button>
+
+                        <button type="button"
+                            class="btn btn-secondary m-1">
+                            Secondary
+                        </button>
+
+                        <button type="button"
+                            class="btn btn-success m-1">
+                            Success
+                        </button>
+
+                        <button type="button"
+                            class="btn btn-danger m-1">
+                            Danger
+                        </button>
+
+                        <button type="button"
+                            class="btn btn-warning m-1">
+                            Warning
+                        </button>
+
+                        <button type="button"
+                            class="btn btn-info m-1">
+                            Information
+                        </button>
+
+                        <button type="button"
+                            class="btn btn-dark m-1">
+                            Dark
+                        </button>
+
+                        <button type="button"
+                            class="btn btn-outline-success m-1">
+                            Outline
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header" id="headingTable">
+
+                    <button class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#tableSection"
+                        aria-expanded="false"
+                        aria-controls="tableSection">
+
+                        Student Table
+
+                    </button>
+
+                </h2>
+
+                <div id="tableSection"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTable"
+                    data-bs-parent="#webAccordion">
+
+                    <div class="accordion-body">
+
+                        <div class="table-responsive">
+
+                            <table class="table table-hover custom-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>#</th>
+
+                                        <th>First Name</th>
+
+                                        <th>Last Name</th>
+
+                                        <th>Username</th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+
+                                        <th>1</th>
+
+                                        <td>Agamya</td>
+
+                                        <td>Pandey</td>
+
+                                        <td>@agamya</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <th>2</th>
+
+                                        <td>Manish</td>
+
+                                        <td>Sharma</td>
+
+                                        <td>@manish</td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <th>3</th>
+
+                                        <td>Tirth</td>
+
+                                        <td>Patel</td>
+
+                                        <td>@tirth</td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="text-center mt-4 text-muted">
+            Developed by Agamya Pandey
+        </p>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>
